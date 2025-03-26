@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" href="/icons/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Template Client</title>
+
+		<!-- START: Google Analytics -->
+		<script
+			src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"
+			async
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("consent", "default", {
+				ad_storage: "denied",
+				ad_user_data: "denied",
+				ad_personalization: "denied",
+				analytics_storage: "denied",
+				functionality_storage: "denied",
+				personalization_storage: "denied",
+				security_storage: "denied",
+				wait_for_update: 1000,
+			});
+		</script>
+		<!-- END: Google Analytics -->
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/sources/index.tsx"></script>
+	</body>
+</html>
