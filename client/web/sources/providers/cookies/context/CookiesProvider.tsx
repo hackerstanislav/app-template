@@ -2,6 +2,7 @@ import * as React from "react";
 import { useCallback, useState } from "react";
 
 import { getCookieState, setCookieState } from "../handlers";
+import { CookieBanner } from "../dialog/CookieBanner";
 import { CookiesContextData } from "../types";
 
 import { CookiesContext } from "./CookiesContext";
@@ -42,8 +43,7 @@ export const CookiesProvider: React.FC<{
 			}}
 		>
 			{children}
-			{/*TODO: Cookie banner */}
-			{/*<CookieBanner onApproved={onApprove} onRejectOptional={onApprove} />*/}
+			<CookieBanner onApproved={onApprove} onRejectOptional={onApprove} />
 		</CookiesContext.Provider>
 	);
 };
