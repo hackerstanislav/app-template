@@ -1,3 +1,11 @@
+import {
+	deleteDefaultHandler,
+	getDefaultHandler,
+	getResourceHandler,
+	postDefaultHandler,
+	putDefaultHandler,
+} from "./handlers";
+
 export type ErrorStatus = 400 | 401 | 403 | 404 | 500 | 503;
 
 export interface UnexpectedError {
@@ -23,4 +31,12 @@ export interface LoginData {
 	picture?: string | null;
 	type?: "kinde" | "token";
 	apiKeys?: LoginApiKey[];
+}
+
+export interface RouterHandlers {
+	get: typeof getDefaultHandler;
+	post: typeof postDefaultHandler;
+	delete: typeof deleteDefaultHandler;
+	put: typeof putDefaultHandler;
+	resource: typeof getResourceHandler;
 }

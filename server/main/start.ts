@@ -1,6 +1,4 @@
 import express from "express";
-import { Db } from "mongodb";
-
 import { ServerHandlers, ServerOptions, ServerReturn } from "./types";
 import { initializeMiddlewares } from "./common/middlewares";
 import { initializeDefaultLogger } from "./common/logger";
@@ -11,6 +9,8 @@ import { createSocket } from "./common/sockets";
 import { createServer } from "./common/http";
 import { initializeAuth } from "./common/sso";
 import { deferred } from "./common/utils";
+
+import { createDatabase, createRoutes } from "./implementation";
 
 export function startServer(
 	opts: ServerOptions,
@@ -24,14 +24,8 @@ export function startServer(
 
 	initializeDefaultLogger(state);
 	initializeHandlers(app, state, handlers);
-	initializeMiddlewares(app, socket, state, (db: Db) => {
-		console.log("Database store must be implemented", db);
-		return {};
-	});
-	initializeRoutes(app, state, (app, state, handlers) => {
-		console.log("Routes must be implemented", app, state);
-		return [];
-	});
+	initializeMiddlewares(app, socket, state, createDatabase(app, state));
+	initializeRoutes(app, state, createRoutes(app, state));
 	initializeAuth(app, state);
 
 	server.listen(state.instance.port, () => {

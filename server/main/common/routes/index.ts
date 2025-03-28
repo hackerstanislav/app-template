@@ -10,6 +10,7 @@ import {
 	putDefaultHandler,
 	getResourceHandler,
 } from "./handlers";
+import { RouterHandlers } from "./types";
 import { handlerErrors } from "./errors";
 import { routeAuth } from "./auth";
 
@@ -18,17 +19,7 @@ export * from "./types";
 export function initializeRoutes(
 	app: Express,
 	state: ServerState,
-	routes: (
-		app: Express,
-		state: ServerState,
-		handlers: {
-			get: typeof getDefaultHandler;
-			post: typeof postDefaultHandler;
-			delete: typeof deleteDefaultHandler;
-			put: typeof putDefaultHandler;
-			resource: typeof getResourceHandler;
-		},
-	) => Router[],
+	routes: (handlers: RouterHandlers) => Router[],
 ) {
 	const router = Router();
 
@@ -44,7 +35,7 @@ export function initializeRoutes(
 	//router all
 	router.use("/", [
 		routeAuth(app, state),
-		...routes(app, state, {
+		...routes({
 			get: getDefaultHandler,
 			post: postDefaultHandler,
 			delete: deleteDefaultHandler,
