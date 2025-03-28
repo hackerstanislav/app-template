@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { match, useLocation, useRouteMatch } from "react-router-dom";
 
-import { RouteDefinition } from "../../../shared";
+import { RouteDefinition } from "../../../router";
 
 export function useRoute<T extends object>(
 	route: RouteDefinition<T>,

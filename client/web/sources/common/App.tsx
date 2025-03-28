@@ -5,7 +5,7 @@ import { RouterProvider } from "./providers/router";
 import { CacheProvider } from "./providers/cache";
 import { ThemeProvider } from "./providers/theme";
 
-import { TELEMETRY_DEBOUNCE } from "./const";
+import { TELEMETRY_DEBOUNCE } from "../const";
 import Root from "./pages";
 
 function App() {

@@ -1,15 +1,16 @@
 import { CssBaseline } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 
+import Main from "../../Main";
+
 import { GLOBAL_STYLES } from "./index.styles";
-import Default from "./Default";
 
 function Root() {
 	return (
 		<>
 			<CssBaseline />
 			<GlobalStyles styles={GLOBAL_STYLES} />
-			<Default />
+			<Main />
 		</>
 	);
 }

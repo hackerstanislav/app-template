@@ -36,10 +36,10 @@ module.exports = {
 		keySeparator: false,
 		resource: {
 			loadPath: path
-				.join(__dirname, "web/sources/translations/assets/{{lng}}.json")
+				.join(__dirname, "web/sources/languages/{{lng}}.json")
 				.replace(/\\/g, "/"),
 			savePath: path
-				.join(__dirname, "web/sources/translations/assets/{{lng}}.json")
+				.join(__dirname, "web/sources/languages/{{lng}}.json")
 				.replace(/\\/g, "/"),
 			jsonIndent: 4,
 			lineEnding: "\n",

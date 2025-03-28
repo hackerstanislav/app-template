@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useHistory } from "react-router";
 
-import { RouteDefinition, buildUrl } from "../../../shared";
+import { RouteDefinition, buildUrl } from "../../../router";
 
 export function useDoNavigate<T extends object>(
 	route: RouteDefinition<T>,

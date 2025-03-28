@@ -13,7 +13,7 @@
     "client/web/build": "cd client/web && tsc && vite build",
     "client/web/development": "cd client/web && vite --force",
     "client/web/lint": "cd client/web && tsc --noEmit && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "client/web/extract-locales": "i18next-scanner --config client/i18next-scanner.config.cjs && prettier --write client/web/sources/translations/assets/*.json",
+    "client/web/extract-locales": "i18next-scanner --config client/i18next-scanner.config.cjs && prettier --write client/web/sources/languages/*.json",
 
     "prettier": "prettier --write {client,server}/**/*",
     "lint": "prettier --check {client,server}/**/* && npm run server/lint && npm run client/web/lint",

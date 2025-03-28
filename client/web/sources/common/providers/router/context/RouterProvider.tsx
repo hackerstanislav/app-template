@@ -2,7 +2,7 @@ import * as React from "react";
 import { useCallback } from "react";
 import { HashRouter } from "react-router-dom";
 
-import { Routes } from "../../../shared";
+import { Routes } from "../../../router";
 import { usePageState } from "../../state";
 import { useRoute } from "../hooks";
 

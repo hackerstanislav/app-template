@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 
-function Default() {
+function Main() {
 	return <Box>This is the default page.</Box>;
 }
 
-export default Default;
+export default Main;
