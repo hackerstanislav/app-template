@@ -7,8 +7,8 @@
     "server/build": "cd server && tsc --outDir ./dist",
     "server/development": "cd server && tsc --outDir ./dist --watch",
     "server/development/database": "cd server && node database.js",
+    "server/development/start": "cd server && node ./dist/main/index.js start 5001 --staticFolder ../client/web/dist --env ../.env",
     "server/lint": "cd server && tsc --noEmit && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "server/start": "cd server && node ./dist/main/index.js start 8080 --staticFolder ../client/web/dist --env ../.env",
 
     "client/web/build": "cd client/web && tsc && vite build",
     "client/web/development": "cd client/web && vite --force",
@@ -17,6 +17,8 @@
 
     "prettier": "prettier --write {client,server}/**/*",
     "lint": "prettier --check {client,server}/**/* && npm run server/lint && npm run client/web/lint",
+
+    "start": "cd server && node ./dist/main/index.js start 8080 --staticFolder ../client/web/dist --env ../.env",
 
     "version-patch": "npm version patch -m \"Release %s\"",
     "version-minor": "npm version minor -m \"Release %s\"",

@@ -1,4 +1,6 @@
 {
+	"common.login": "Login",
+	"common.register": "Register",
 	"cookies.allow_all": "Allow all",
 	"cookies.banner.title": "This application uses cookies",
 	"cookies.description": "Domain <b>{{domain}}</b> relies on cookies. There are some system cookies that are used for storing session and some telemetry to improve your experience.",
