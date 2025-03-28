@@ -3,9 +3,12 @@ import { defineConfig } from "vite";
 import viteEnvironmentPlugin from "vite-plugin-environment";
 import react from "@vitejs/plugin-react";
 import mkcert from "vite-plugin-mkcert";
+import path from "path";
 
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({
+	path: path.resolve(__dirname, "../../.env"),
+});
 
 const VITE_GA_ID = process.env.VITE_GA_ID ?? null;
 
